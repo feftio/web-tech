@@ -8,17 +8,16 @@
 
 body {
     position: relative;
-    height: 100%;
     background-color: #4b98ad;
 }
 
 h2 {
-    font-family: 'Dosis', sans-serif;
-    font-size: 25px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: 'Dosis', sans-serif;
+    font-size: 25px;
     color: #da4848;
 }
 
@@ -28,58 +27,61 @@ p {
 }
 
 .wrapper {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
-    max-width: 100vw;
-    max-height: 100vh;
-    padding: 20px;
-    overflow: auto;
 }
 
 .box {
-    margin: auto 0;
-    min-width: 200px;
+    margin: auto;
 }
 
-.box__text {
+.box_text {
     position: relative;
-    text-align: center; 
-    height: 50px;
+    display: block;
+    height: 75px;
+    max-width: 90vw;
+    text-align: center;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     background-color: #f4db8c;
-
 }
 
-.box__form {
+.box_form {
     position: relative;
-    max-height: 80vh;
-    padding: 40px;
+    display: block;
+    max-height: 70vh;
+    max-width: 90vw;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: #6dbdab;
     overflow: auto;
 }
 
-.box__form input[type="submit"] {
-    position: absolute;
-    cursor: pointer;
-    height: 50px;
-    top: 50%;
-    left: 50%;
-    padding: 5px;
-    transform: translate(-50%, -50%);
+.box_form-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_form input[type="submit"] {
+    display: block;
+    width: 100%;
+    max-height: 100px;
+    padding: 50px;
     background-color: #da4848;
-    border-radius: 5px;
     border: none;
     outline: none;
     transition: background-color 0.2s ease;
     color: white;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
-.box__form input[type="submit"]:hover {
+.box_form input[type="submit"]:hover {
     background-color: #ee6565;
 }
