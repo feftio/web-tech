@@ -1,8 +1,23 @@
 <?php
-include_once 'src/php/functions.php';
 
-// CONFIG
+/**
+ * Including files
+ *
+ */
+include 'src\php\functions.php';
+
+/**
+ * Configuration
+ *
+ */
 $LAB = 'Lab 2';
+$METHODS = ['COOKIE', 'SESSION'];
+
+/**
+ * Actions
+ * 
+ */
+useMethod($METHODS[0]);
 
 ?>
 
@@ -20,12 +35,28 @@ $LAB = 'Lab 2';
 <body>
     <div class="wrapper">
         <div class="box">
-            <div class="box_text">
+
+            <div class="box_name">
                 <h2><?php echo $LAB; ?></h2>
             </div>
-            <form class="box_form" method="POST">
-            
-            </form>
+
+            <div class="box_task">
+                <form method="post">
+                    <div class="q-block">
+                        <label class="q" for="q1">What's your name?</label>
+                        <input type="text" id="q1" name="q1">
+                    </div>
+                    <div class="q-block">
+                        <label class="q" for="q2">How old are you?</label>
+                        <input type="number" id="q2" name="q2">
+                    </div>
+                    <div class="q-block">
+                        <label class="q" for="q3">Phone Number</label>
+                        <input type="tel" id="q3" name="q3">
+                    </div>
+                </form>
+            </div>
+
         </div>
     </div>
 </body>

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
 
+/* Defaults */
+
 *,
 *:after,
 *:before {
@@ -11,7 +13,68 @@ body {
     background-color: #4b98ad;
 }
 
-h2 {
+button,
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    margin: 4px 2px;
+    padding: 8px;
+    font:normal normal 16px/normal "Source Sans Pro",Calibri,Arial,Sans-Serif;
+    color:#666;
+    line-height: normal;
+    background-color: white;
+    border:1px solid  #ccc;
+    border-top-color: #999;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    outline-offset: -2px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
+    -webkit-transition: all .26s ease-out;
+    -moz-transition: all .26s ease-out;
+    -ms-transition: all .26s ease-out;
+    -o-transition: all .26s ease-out;
+    transition: all .26s ease-out;
+}
+
+/* Top */
+
+.wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.box {
+    margin: auto;
+}
+
+/* Name */
+
+.box_name {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #f4db8c;
+}
+
+.box_name h2 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -21,67 +84,35 @@ h2 {
     color: #da4848;
 }
 
-p {
-    font-family: 'Dosis', sans-serif;
-    font-size: 22px;
-}
+/* Task */
 
-.wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-}
-
-.box {
-    margin: auto;
-}
-
-.box_text {
-    position: relative;
+.box_task {
     display: block;
-    height: 75px;
-    max-width: 90vw;
-    text-align: center;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    background-color: #f4db8c;
-}
-
-.box_form {
-    position: relative;
-    display: block;
-    max-height: 70vh;
-    max-width: 90vw;
+    max-width: 100vw;
+    max-height: 100vh;
+    padding: 15px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: #6dbdab;
-    overflow: auto;
+    overflow: hidden;
 }
 
-.box_form-inputs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/* Others */
 
-.box_form input[type="submit"] {
+.q-block {
+    position: relative;
     display: block;
-    width: 100%;
-    max-height: 100px;
-    padding: 50px;
-    background-color: #da4848;
-    border: none;
-    outline: none;
-    transition: background-color 0.2s ease;
-    color: white;
-    cursor: pointer;
-    box-sizing: border-box;
+    padding: 10px;
+    margin: auto;
 }
 
-.box_form input[type="submit"]:hover {
-    background-color: #ee6565;
+.q {
+    display: block;
+    width: 300px;
+    padding: 10px;
+    text-align: left;
+}
+
+.a {
+    
 }
