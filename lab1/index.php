@@ -1,45 +1,72 @@
-<?php include_once 'src/php/functions.php'; ?>
+<?php
+
+/**
+ * Including files
+ *
+ */
+include_once 'src/php/functions.php';
+
+/**
+ * Configuration
+ *
+ */
+$LAB = 'Lab 1';
+$FILE = 'log.txt';
+
+?>
 
 <!DOCTYPE html>
 <html lang='ru'>
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-    <meta name="description" content="Lab 1">
+    <meta name="description" content="<?php echo $LAB; ?>">
     <meta name="author" content="Lik Eduard">
     <link rel="stylesheet" href="src/css/reset.css?v=<?php echo generateRandomString(5); ?>">
     <link rel="stylesheet" href="src/css/style.css?v=<?php echo generateRandomString(5); ?>">
-    <title>Lab 1</title>
+    <title><?php echo $LAB; ?></title>
 </head>
 <body>
     <div class="wrapper">
         <div class="box">
-            <div class="box_text">
-                <h2>Lab 1</h2>
+
+            <div class="box_name">
+                <h2><?php echo $LAB; ?></h2>
             </div>
-            <form class="box_form" method="POST">
 
-                <?php if (isset($_GET['get_server_variables']) || isset($_POST['get_server_variables'])) { 
+            <div class="box_task">
+                <form method="post">
+
+                    <?php if (isset($_GET['get']) || isset($_POST['get'])) { ?>
+
+                        <div class="list">
+                        <?php foreach ($_SERVER as $key => $value) { ?>
+                            <div class="record">
+                                <span><?php echo $key; ?></span><p><?php echo $value; ?></p>
+                            </div>
+                        <?php } ?>
+                        </div>
+
+                        <input class="back" type="submit" name="back" value="Back">
+
+                    <?php } elseif (isset($_GET['write']) || isset($_POST['write'])) { ?>
+                        
+                        <?php file_put_contents($FILE, implode("\n", $_SERVER)); ?>
+
+                        <p class="record">Writed To File "<?php echo $FILE; ?>"</p>
+                        <input class="back" type="submit" name="back" value="Back">
+
+                    <?php } else { ?>
+
+                        <div class="buttons">
+                            <input type="submit" name="get" value="Get Server Variables">
+                            <input type="submit" name="write" value="Write To File">
+                        </div>
+
+                    <?php } ?>
                     
-                    foreach ($_SERVER as $key => $value) { ?>
-
-                    <div style="margin: 15px 10px 20px 10px"><span><?php echo $key; ?></span><p><?php echo $value; ?></p></div>
-
-                <?php } } elseif (isset($_GET['write_to_file']) || isset($_POST['write_to_file'])) { ?>
-
-                    <?php
-
-                    ?>
-
-                <?php } else { ?>
-                    <div class="box_form-inputs">
-                        <input type="submit" name="get_server_variables" value="Get Server Variables">
-                        <input type="submit" name="write_to_file" value="Write To File">
-                    </div>
-
-                <?php } ?>
-
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </body>

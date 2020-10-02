@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
+
+*,
+*:after,
+*:before {
+    font-family: 'Dosis', sans-serif;
+}
+
+body {
+    position: relative;
+    background-color: #4b98ad;
+}
+
+h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Dosis', sans-serif;
+    font-size: 25px;
+    color: #da4848;
+}
+
+p {
+    font-family: 'Dosis', sans-serif;
+    font-size: 22px;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.box {
+    margin: auto;
+}
+
+.box_text {
+    position: relative;
+    display: block;
+    height: 75px;
+    max-width: 90vw;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #f4db8c;
+}
+
+.box_form {
+    position: relative;
+    display: block;
+    max-height: 70vh;
+    max-width: 90vw;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #6dbdab;
+    overflow: auto;
+}
+
+.box_form-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_form input[type="submit"] {
+    display: block;
+    width: 100%;
+    max-height: 100px;
+    padding: 50px;
+    background-color: #da4848;
+    border: none;
+    outline: none;
+    transition: background-color 0.2s ease;
+    color: white;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.box_form input[type="submit"]:hover {
+    background-color: #ee6565;
+}
