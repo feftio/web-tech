@@ -16,4 +16,12 @@ function generateRandomString($length = 10) {
     return $randomString;
 }
 
+function show($variable) {
+    if (isset($variable) && $variable != '') echo $variable;
+}
+
+function show_radio($variable, $radio) {
+    if (isset($variable) && $variable == $radio) echo 'checked="checked"';
+}
+
 ?>
