@@ -1,0 +1,89 @@
+/* Import */
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+
+/* Main */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+	font-weight: 300;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 200;
+}
+
+a {
+    text-decoration: none;
+    color: #E36A54;
+    transition-duration: 0.25s;
+}
+
+a:hover {
+    color: #E36A54;
+}
+
+input {
+    display: block;
+    outline: 0;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    transition-duration: 0.25s;
+    -webkit-transition-duration: 0.25s;
+}
+
+/* input[type="text, password"] */
+
+input[type="text"], 
+input[type="password"] {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    font-size: 18px;
+    color: white;
+    font-weight: 300;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-align: center;
+}
+
+input[type="text"]:hover, 
+input[type="password"]:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+input[type="text"]:focus, 
+input[type="password"]:focus {
+    background-color: white;
+    width: 95%;
+    color: #53e3a6;
+}
+
+input[type="text"]::placeholder, 
+input[type="password"]::placeholder {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    font-weight: 300;
+}
+
+/* input[type="submit"] */
+
+input[type="submit"] {
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255);
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 3px;
+    color: #53e3a6;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}

@@ -1,0 +1,36 @@
+/* Auth */
+
+.wrapper-auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: #50a3a2;
+    background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+    overflow: hidden;
+}
+
+/* Auth Login */
+
+.container-login {
+    width: 270px;
+    margin: auto;
+}
+
+.container-login h2 {
+    margin: 0 0 12px 0;
+    text-align: center;
+}
+
+.container-login input {
+    width: 85%;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+}
+
+.container-login p {
+    text-align: center;
+}
+
+/* Auth Reg */
