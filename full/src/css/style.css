@@ -1,36 +1,47 @@
 /* Auth */
 
-.wrapper-auth {
+.auth {
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100vw;
     height: 100vh;
+    justify-content: center;
+    align-items: center;
     background: #50a3a2;
     background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
     overflow: hidden;
 }
 
-/* Auth Login */
-
-.container-login {
-    width: 270px;
+.container {
+    position: relative;
     margin: auto;
 }
 
-.container-login h2 {
+.auth h2 {
     margin: 0 0 12px 0;
     text-align: center;
 }
 
-.container-login input {
+.auth input {
     width: 85%;
     padding: 10px 15px;
     margin: 0 auto 10px auto;
 }
 
-.container-login p {
+.auth p {
     text-align: center;
 }
 
+/* Auth Login */
+
+.login {
+    width: 270px;
+}
+
 /* Auth Reg */
+
+.reg {
+    width: 300px;
+}
+
+/* */
