@@ -19,12 +19,12 @@
             <form method="post" action="">
                 <input class="auth-textbox" type="text" name="username" placeholder="Username">
                 <input class="auth-textbox" type="password" name="password" placeholder="Password">
-                <input class="auth-submit" type="submit" value="Log in">
-                <p>Need an account? <a href="#" id="toggle-reg">Sign up</a> now!</p>
+                <input class="auth-submit" type="submit" name="login" value="Log in">
+                <p>Need an account? <a href="#" id="toggle-signup">Sign up</a> now!</p>
             </form>
         </div>
 
-        <div class="container reg" style="display: none;">
+        <div class="container signup" style="display: none;">
             <h2>Sign up</h2>
             <form method="post" action="">
                 <input class="auth-textbox" type="email" name="email" placeholder="Email">

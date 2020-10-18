@@ -1,15 +1,15 @@
 $(document).ready(function() {
 
-    $("#toggle-reg").click(function(e) {
+    $("#toggle-signup").click(function(e) {
         e.preventDefault();
-        $(".login").fadeOut(500, function() {
-            $(".reg").fadeIn();
+        $(".login").fadeOut(450, function() {
+            $(".signup").fadeIn();
         });
     });
 
     $("#toggle-login").click(function(e) {
         e.preventDefault();
-        $(".reg").fadeOut(500, function() {
+        $(".signup").fadeOut(450, function() {
             $(".login").fadeIn();
         });
     });

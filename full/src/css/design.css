@@ -40,7 +40,7 @@ input {
     -webkit-transition-duration: 0.25s;
 }
 
-/* Auth styles */
+/* Auth Styles Start */
 
 /* textbox */
 
@@ -72,17 +72,6 @@ input {
     font-weight: 300;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* submit */
 
 .auth-submit {
@@ -98,17 +87,6 @@ input {
 .auth-submit:hover {
     background-color: rgba(255, 255, 255, 0.9);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* Bubbles effect */
 
