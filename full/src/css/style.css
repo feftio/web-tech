@@ -14,7 +14,7 @@
 
 .container {
     position: relative;
-    margin: auto;
+    margin: auto 0;
 }
 
 .auth h2 {
@@ -34,7 +34,7 @@
 
 /* Auth Login */
 
-.login {
+.signin {
     width: 270px;
 }
 
@@ -43,3 +43,4 @@
 .signup {
     width: 300px;
 }
+

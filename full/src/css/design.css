@@ -34,7 +34,7 @@ input {
     display: block;
     outline: 0;
     text-transform: none;
-    text-indent: 0px;
+    text-indent: 0;
     text-shadow: none;
     transition-duration: 0.25s;
     -webkit-transition-duration: 0.25s;

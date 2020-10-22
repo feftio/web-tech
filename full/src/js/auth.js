@@ -1,19 +1,50 @@
 $(document).ready(function() {
 
-    $("#toggle-signup").click(function(e) {
+    /**
+     * 
+     * Toggle forms
+     */
+
+    $("#show-signin, #show-signup").click(function(e) {
         e.preventDefault();
-        $(".login").fadeOut(450, function() {
-            $(".signup").fadeIn();
-        });
+        if (this.id == "show-signin") toggle(".signup", ".signin");
+        if (this.id == "show-signup") toggle(".signin", ".signup");
     });
 
-    $("#toggle-login").click(function(e) {
-        e.preventDefault();
-        $(".signup").fadeOut(450, function() {
-            $(".login").fadeIn();
+    function toggle(from, to, time = 450) {
+        $(from).fadeOut(time, function() {
+            $(to).fadeIn();
         });
-    });
+    }
 
+    /**
+     * 
+     * Login ajax
+     */
 
+    $("#signup-form").submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "post",
+            url: "src/php/signup.php",
+            data: $(this).serialize(),
+            success: function(response) {
+                let data = JSON.parse(response);
+
+                if (data.success == 1) {
+                    swal({
+                        title: "You created the new account",
+                        text: "Wait for a moment...",
+                        icon: "success",
+                        timer: 3000,
+                        buttons: false,
+                        closeOnClickOutside: false
+                      }).then(function() {
+                          toggle(".signup", ".signin");
+                      });
+                }
+            }
+       });
+     });
 
 });
