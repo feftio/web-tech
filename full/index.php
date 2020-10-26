@@ -1,4 +1,9 @@
-<?php include_once 'src/php/utils.php'; ?>
+<?php
+
+include_once 'src/php/db.php';
+include_once 'src/php/utils.php';
+
+?>
 
 <!DOCTYPE html>
 <html lang="ru">

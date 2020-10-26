@@ -33,7 +33,7 @@ $(document).ready(function() {
 
                 if (data.success == 1) {
                     swal({
-                        title: "You created the new account",
+                        title: "You have a new account",
                         text: "Wait for a moment...",
                         icon: "success",
                         timer: 3000,
@@ -44,7 +44,6 @@ $(document).ready(function() {
                       });
                 }
             }
-       });
+        });
      });
-
 });

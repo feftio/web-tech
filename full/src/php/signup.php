@@ -1,5 +1,11 @@
 <?php
 
-echo json_encode(["success" => 1]);
+/**
+ * Sign up handler
+ * 
+ * @return json_encode(array)
+ */
+
+echo json_encode(["status" => "err"]);
 
 ?>

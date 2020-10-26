@@ -1,3 +1,17 @@
+/* !important */
+
+/*
+
+.swal-icon--success__line {
+    background-color: #53e3a6 !important;
+}
+
+.swal-icon--success {
+    border-color: #53e3a6 !important;
+}
+
+*/
+
 /* Auth */
 
 .auth {
@@ -32,7 +46,7 @@
     text-align: center;
 }
 
-/* Auth Login */
+/* Auth Signin */
 
 .signin {
     width: 270px;
@@ -43,4 +57,3 @@
 .signup {
     width: 300px;
 }
-
