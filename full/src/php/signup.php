@@ -6,6 +6,6 @@
  * @return json_encode(array)
  */
 
-echo json_encode(["status" => "err"]);
+echo json_encode(["status" => "ok"]);
 
 ?>

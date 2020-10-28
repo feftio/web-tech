@@ -48,7 +48,7 @@ include_once 'src/php/utils.php';
         
     </main>
 </body>
-<script src="src/js/jquery-3.5.1.min.js"></script>
-<script src="src/js/sweetalert.min.js""></script>
-<script src="src/js/auth.js"></script>
+<script src="src/js/jquery-3.5.1.min.js?v=<?php echo random_str(5); ?>"></script>
+<script src="src/js/sweetalert.min.js?v=<?php echo random_str(5); ?>"></script>
+<script src="src/js/auth.js?v=<?php echo random_str(5); ?>"></script>
 </html>

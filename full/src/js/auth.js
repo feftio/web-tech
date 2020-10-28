@@ -29,9 +29,11 @@ $(document).ready(function() {
             url: "src/php/signup.php",
             data: $(this).serialize(),
             success: function(response) {
-                let data = JSON.parse(response);
 
-                if (data.success == 1) {
+                let data = JSON.parse(response);
+                console.log(data);
+
+                if (data.status == "ok") {
                     swal({
                         title: "You have a new account",
                         text: "Wait for a moment...",
