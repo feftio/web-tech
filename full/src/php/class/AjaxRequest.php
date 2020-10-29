@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * AjaxRequest
+ */
 class AjaxRequest {
 
    public $actions = [];
