@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * random_str
+ *
+ * @param  int $len
+ * @return string
+ */
 function random_str($len = 10) {
     $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charsLen = strlen($chars);
@@ -8,10 +14,6 @@ function random_str($len = 10) {
         $str .= $chars[rand(0, $charsLen - 1)];
     }
     return $str;
-}
-
-function fun() {
-    
 }
 
 ?>

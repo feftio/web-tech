@@ -106,6 +106,10 @@ class User {
         return $this->is_authorized;
     }
 
+    public function logout() {
+        if (!empty($_SESSION["user_id"])) unset($_SESSION["user_id"]);
+    }
+
     public function saveSession($remember = false, $http_only = true, $days = 7) {
         $_SESSION["user_id"] = $this->user_id;
 
@@ -147,11 +151,6 @@ class User {
         if (!empty($_SESSION["user_id"])) return (bool) $_SESSION["user_id"];
         return false;
     }
-
-    public function logout() {
-        if (!empty($_SESSION["user_id"])) unset($_SESSION["user_id"]);
-    }
-
 
 }
 
