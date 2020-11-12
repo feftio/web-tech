@@ -1,0 +1,20 @@
+{
+    "name": "feftio/web-tech",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lik Eduard",
+            "email": "feft99@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "delight-im/auth": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "tech\\": ""
+        }
+    }
+}

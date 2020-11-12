@@ -1,5 +1,7 @@
 <?php
 
+namespace tech\app;
+
 /**
  * Class User. The class for use authorize methods in web app.
  * 
