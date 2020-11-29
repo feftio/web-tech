@@ -6,8 +6,8 @@
     <meta name="description" content="Task">
     <meta name="author" content="Lik Eduard">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="src/css/design.css?v=<?php echo random_str(5); ?>">
-    <link rel="stylesheet" href="src/css/style.css?v=<?php echo random_str(5); ?>">
+    <link rel="stylesheet" href="resources/css/design.css">
+    <link rel="stylesheet" href="resources/css/style.css">
     <title>Task</title>
 </head>
 <body>
@@ -41,7 +41,7 @@
         
     </main>
 </body>
-<script src="src/js/jquery-3.5.1.min.js?v=<?php echo random_str(5); ?>"></script>
-<script src="src/js/sweetalert.min.js?v=<?php echo random_str(5); ?>"></script>
-<script src="src/js/auth.js?v=<?php echo random_str(5); ?>"></script>
+<script src="resources/js/jquery-3.5.1.min.js"></script>
+<script src="resources/js/sweetalert.min.js"></script>
+<script src="resources/js/auth.js"></script>
 </html>

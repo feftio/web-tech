@@ -1,4 +1,5 @@
 <?php
+
 require __DIR__ . '/vendor/autoload.php';
 
 use Delight\Auth\Auth;
@@ -14,14 +15,11 @@ $db->exec($query);
 $auth = new Auth($db);
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/auth', 'handler');
-    $r->addRoute('GET', '/', 'handler');
+    $r->addRoute('GET', '/auth', 'auth');
+    $r->addRoute('GET', '/', 'main');
 });
 
-print_r($_SERVER['REQUEST_URI']);
-
 $routeInfo = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
-print_r($routeInfo);
 
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
@@ -38,9 +36,12 @@ switch ($routeInfo[0]) {
         break;
 }
 
-function handler() {
-    echo 'hello';
+function main() {
+
 }
 
+function auth() {
+    include 'auth.php';
+}
 
 ?>
