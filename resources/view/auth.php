@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Task">
     <meta name="author" content="Lik Eduard">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="resources/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="resources/css/design.css">
     <link rel="stylesheet" href="resources/css/style.css">
     <title>Task</title>

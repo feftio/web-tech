@@ -14,9 +14,10 @@ $db->exec($query);
 
 $auth = new Auth($db);
 
-$dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/auth', 'auth');
-    $r->addRoute('GET', '/', 'main');
+$dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $router) {
+    $router->addRoute('GET', '/', 'main');
+    $router->addRoute('GET', '/auth', 'auth');
+    $router->addRoute('POST', '/signup', 'signup');
 });
 
 $routeInfo = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
@@ -37,11 +38,15 @@ switch ($routeInfo[0]) {
 }
 
 function main() {
-
+    
 }
 
 function auth() {
-    include 'auth.php';
+    include 'resources/view/auth.php';
+}
+
+function signup() {
+    echo json_encode(['status' => 'ok', 'data' => 0]);
 }
 
 ?>

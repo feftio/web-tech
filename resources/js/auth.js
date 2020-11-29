@@ -26,7 +26,7 @@ $(document).ready(function() {
         e.preventDefault();
         $.ajax({
             type: "post",
-            url: "src/php/signup.php",
+            url: "signup",
             data: $(this).serialize(),
             success: function(response) {
 
