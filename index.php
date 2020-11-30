@@ -82,10 +82,7 @@ function main() {
     global $auth, $twig;
     // $auth->logout();
     if (!$auth->isLoggedIn()) header("Location: /auth");
-    else {
-        mail('feft99@gmail.com', 'Тема письма', 'Текст письма', 'From: feft9999@gmail.com');
-        echo $twig->render('main.html');
-    }
+    else echo $twig->render('main.html');
 }
 
 function auth() {
