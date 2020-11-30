@@ -3,6 +3,8 @@
 require __DIR__ . '/vendor/autoload.php';
 
 use Delight\Auth\Auth;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -14,8 +16,8 @@ $db->exec($query);
 
 $auth = new Auth($db);
 
-$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/resources/view');
-$twig = new \Twig\Environment($loader);
+$loader = new FilesystemLoader(__DIR__ . '/resources/view');
+$twig = new Environment($loader);
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $router) {
     $router->get('/', 'main');
@@ -50,7 +52,24 @@ function auth() {
 }
 
 function signup() {
-    echo json_encode(['status' => 'ok']);
+    global $auth;
+    try {
+        $userId = $auth->register($_POST['email'], $_POST['password'], $_POST['username'], function ($selector, $token) {
+            echo json_encode(['status' => 'ok', 'data' => [$selector, $token]]);
+        });
+    }
+    catch (\Delight\Auth\InvalidEmailException $e) {
+        echo json_encode(['status' => 'err']);
+    }
+    catch (\Delight\Auth\InvalidPasswordException $e) {
+        echo json_encode(['status' => 'err']);
+    }
+    catch (\Delight\Auth\UserAlreadyExistsException $e) {
+        echo json_encode(['status' => 'err']);
+    }
+    catch (\Delight\Auth\TooManyRequestsException $e) {
+        echo json_encode(['status' => 'err']);
+    }
 }
 
 ?>

@@ -19,7 +19,7 @@
     </Files>
 
     # RewriteCond %{REQUEST_URI} !\.(jpg|png|css|js|ttf)$
-
+    
     RewriteCond %{REQUEST_URI} !\.(php)$
     RewriteCond %{REQUEST_FILENAME} !-l
     RewriteCond %{REQUEST_FILENAME} !-d
