@@ -6,15 +6,15 @@ $(document).ready(function() {
      */
 
     $("#show-signin, #show-signup").click(function(e) {
-        e.preventDefault();
-        if (this.id == "show-signin") toggle(".signup", ".signin");
-        if (this.id == "show-signup") toggle(".signin", ".signup");
-    });
+        e.preventDefault()
+        if (this.id == "show-signin") toggle(".signup", ".signin")
+        if (this.id == "show-signup") toggle(".signin", ".signup")
+    })
 
     function toggle(from, to, time = 450) {
         $(from).fadeOut(time, function() {
             $(to).fadeIn();
-        });
+        })
     }
 
     /**
@@ -29,7 +29,8 @@ $(document).ready(function() {
             url: "signup",
             data: $(this).serialize(),
             success: function(response) {
-                let data = JSON.parse(response);
+                let data = JSON.parse(response)
+                console.log(data)
                 if (data.status == "ok") {
                     swal({
                         title: "You have a new account",
@@ -43,17 +44,17 @@ $(document).ready(function() {
                       });
                 }
             }
-        });
-     });
+        })
+     })
 
      $("#signin-form").submit(function(e) {
-        e.preventDefault();
+        e.preventDefault()
         $.ajax({
             type: "post",
             url: "signin",
             data: $(this).serialize(),
             success: function(response) {
-                let data = JSON.parse(response);
+                let data = JSON.parse(response)
                 console.log(data)
                 if (data.status == "ok") {
                     swal({
@@ -65,9 +66,9 @@ $(document).ready(function() {
                         closeOnClickOutside: false
                       }).then(function() {
                         window.location.href = '/';
-                      });
+                      })
                 }
             }
-        });
-     });
-});
+        })
+     })
+})

@@ -26,7 +26,7 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ index.php [L]
 
-    ErrorDocument 403 /index.php
-    ErrorDocument 500 /index.php
+
+    ErrorDocument 403,404 /index.php
 
 </IfModule>
