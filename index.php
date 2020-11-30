@@ -23,6 +23,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $rout
     $router->get('/', 'main');
     $router->get('/auth', 'auth');
     $router->post('/signup', 'signup');
+    $router->post('/signin', 'signin');
 });
 
 $routeInfo = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
@@ -48,11 +49,34 @@ function main() {
 
 function auth() {
     global $twig;
+
     echo $twig->render('auth.html');
+}
+
+function signin() {
+    global $auth;
+
+    try {
+        $auth->login($_POST['email'], $_POST['password']);
+        echo json_encode(['status' => 'ok']);
+    }
+    catch (\Delight\Auth\InvalidEmailException $e) {
+        echo json_encode(['status' => 'err', 'data' => 'InvalidEmail']);
+    }
+    catch (\Delight\Auth\InvalidPasswordException $e) {
+        echo json_encode(['status' => 'err', 'data' => 'InvalidPassword']);
+    }
+    catch (\Delight\Auth\EmailNotVerifiedException $e) {
+        echo json_encode(['status' => 'err', 'data' => 'EmailNotVerified']);
+    }
+    catch (\Delight\Auth\TooManyRequestsException $e) {
+        echo json_encode(['status' => 'err', 'data' => 'TooManyRequests']);
+    }
 }
 
 function signup() {
     global $auth;
+
     try {
         $userId = $auth->register($_POST['email'], $_POST['password'], $_POST['username'], function ($selector, $token) {
             echo json_encode(['status' => 'ok', 'data' => [$selector, $token]]);

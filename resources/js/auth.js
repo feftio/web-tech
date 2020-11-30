@@ -29,10 +29,7 @@ $(document).ready(function() {
             url: "signup",
             data: $(this).serialize(),
             success: function(response) {
-
                 let data = JSON.parse(response);
-                console.log(data);
-
                 if (data.status == "ok") {
                     swal({
                         title: "You have a new account",
@@ -43,6 +40,31 @@ $(document).ready(function() {
                         closeOnClickOutside: false
                       }).then(function() {
                           toggle(".signup", ".signin");
+                      });
+                }
+            }
+        });
+     });
+
+     $("#signin-form").submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "post",
+            url: "signin",
+            data: $(this).serialize(),
+            success: function(response) {
+                let data = JSON.parse(response);
+                console.log(data)
+                if (data.status == "ok") {
+                    swal({
+                        title: "You have been logged in",
+                        text: "Wait for a moment...",
+                        icon: "success",
+                        timer: 2000,
+                        buttons: false,
+                        closeOnClickOutside: false
+                      }).then(function() {
+                        window.location.href = '/';
                       });
                 }
             }
