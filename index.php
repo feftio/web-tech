@@ -23,11 +23,7 @@ $loader = new FilesystemLoader(__DIR__ . '/resources/view');
 $twig = new Environment($loader);
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $router) {
-    $router->get('/', 'main');
-    $router->get('/auth', 'auth');
-    $router->get('/verify', 'verify');
-    $router->post('/signup', 'signup');
-    $router->post('/signin', 'signin');
+    require __DIR__ . '/app/Routes.php';
 });
 
 $routeInfo = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
