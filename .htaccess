@@ -5,22 +5,27 @@
     </IfModule>
 
     RewriteEngine On
+    DirectorySlash Off
 
     <Files *.php>
-    #Order Deny,Allow
-    #Deny from all
+    # Order Deny,Allow
+    # Deny from all
     </Files>
 
     <Files index.php>
-    Order Allow,Deny
-    Allow from all
+    # Order Allow,Deny
+    # Allow from all
     </Files>
 
-    RewriteCond %{REQUEST_URI} !\.(jpg|png|css|js)$
+    # RewriteCond %{REQUEST_URI} !\.(jpg|png|css|js|ttf)$
 
-    # RewriteCond %{REQUEST_FILENAME} !-f
+    # RewriteCond %{REQUEST_URI} !/.(php)$
     # RewriteCond %{REQUEST_FILENAME} !-l
     # RewriteCond %{REQUEST_FILENAME} !-d
+    # RewriteCond %{REQUEST_FILENAME} !-f
+    # RewriteRule ^ index.php [L]
+
+    RewriteCond %{REQUEST_URI} !/.(php)$
     RewriteRule ^ index.php [L]
 
 </IfModule>
