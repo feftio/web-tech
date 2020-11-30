@@ -14,6 +14,9 @@ $db->exec($query);
 
 $auth = new Auth($db);
 
+$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/resources/view');
+$twig = new \Twig\Environment($loader);
+
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $router) {
     $router->addRoute('GET', '/', 'main');
     $router->addRoute('GET', '/auth', 'auth');
@@ -38,11 +41,12 @@ switch ($routeInfo[0]) {
 }
 
 function main() {
-    
+
 }
 
 function auth() {
-    include 'resources/view/auth.php';
+    global $twig;
+    echo $twig->render('auth.html');
 }
 
 function signup() {
