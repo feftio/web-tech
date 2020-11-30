@@ -18,9 +18,9 @@ $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/resources/view');
 $twig = new \Twig\Environment($loader);
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $router) {
-    $router->addRoute('GET', '/', 'main');
-    $router->addRoute('GET', '/auth', 'auth');
-    $router->addRoute('POST', '/signup', 'signup');
+    $router->get('/', 'main');
+    $router->get('/auth', 'auth');
+    $router->post('/signup', 'signup');
 });
 
 $routeInfo = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
@@ -50,7 +50,7 @@ function auth() {
 }
 
 function signup() {
-    echo json_encode(['status' => 'ok', 'data' => 0]);
+    echo json_encode(['status' => 'ok']);
 }
 
 ?>
