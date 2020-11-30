@@ -2,13 +2,16 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Delight\Auth\Auth;
-use Twig\Environment;
-use Twig\Loader\FilesystemLoader;
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+use Delight\Auth\Auth;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
+use Framework\Mail\Mailer;
+
+$mailer = new Mailer();
 
 $db = new PDO('mysql:dbname=tech;host=localhost;charset=utf8mb4', 'root', 'root');
 $query = file_get_contents('resources/sql/tables.sql');
@@ -18,39 +21,6 @@ $auth = new Auth($db);
 
 $loader = new FilesystemLoader(__DIR__ . '/resources/view');
 $twig = new Environment($loader);
-
-
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-$mail = new PHPMailer(true);
-
-// try {
-//     //Server settings
-//     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-//     $mail->isSMTP();                                            // Send using SMTP
-//     $mail->Host       = "ssl://smtp.gmail.com";                    // Set the SMTP server to send through
-//     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-//     $mail->Username   = '19200114@turan-edu.kz';                     // SMTP username
-//     $mail->Password   = 'mottsun7979';                      // SMTP password
-//     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-//     $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-
-//     //Recipients
-//     $mail->setFrom('from@example.com', 'Mailer');
-//     $mail->addAddress('feft9999@gmail.com', 'Joe User');     // Add a recipient
-
-//     $mail->Subject = 'Here is the subject';
-//     $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-//     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-//     $mail->send();
-//     echo 'Message has been sent';
-// } catch (Exception $e) {
-//     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-// }
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $router) {
     $router->get('/', 'main');
