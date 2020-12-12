@@ -2,9 +2,12 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+include __DIR__ . '/resources/xml/example.php';
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+ob_start();
 
 use Delight\Auth\Auth;
 use Twig\Environment;
@@ -45,10 +48,10 @@ switch ($routeInfo[0]) {
 }
 
 function main() {
-    global $auth, $twig;
-    // $auth->logout();
+    global $auth, $twig, $xml;
+    $infoMain = new SimpleXMLElement($xml);
     if (!$auth->isLoggedIn()) header("Location: /auth");
-    else echo $twig->render('main.html');
+    else echo $twig->render('main.html', ['info' => $infoMain->info->name]);
 }
 
 function auth() {
